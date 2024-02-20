@@ -47,3 +47,5 @@ To make this service more production-ready, the following improvements could be 
 - **Monitoring and Tracing**: Integrate monitoring and tracing tools to track health, performance metrics, and request traces.
 
 - **TLS/SSL**: Secure all communications with TLS.
+
+- **Caching**: While weather conditions do change regularly, implementing some sort of caching mechanism could enhancing performance and minimize the number of external API requests to OpenWeather if it becomes an issue.
