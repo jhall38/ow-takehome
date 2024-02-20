@@ -75,6 +75,8 @@ func TestValidateCoordinates(t *testing.T) {
 		{"longitude low", "40.712776", "-181.0", true},
 		{"non numeric latitude", "nonnumber", "-74.005974", true},
 		{"non numeric longitude", "40.712776", "nonnumber", true},
+		{"no latitutde", "", "-74.005974", true},
+		{"no longitude", "40.712776", "", true},
 	}
 
 	for _, tc := range cases {

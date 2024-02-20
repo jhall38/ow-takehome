@@ -47,6 +47,11 @@ func handleWeatherRequest(apiKey string, api OpenWeatherAPI, w http.ResponseWrit
 
 // validateCoordinates checks if the provided latitude and longitude are valid.
 func validateCoordinates(lat, lon string) error {
+
+	if lat == "" || lon == "" {
+		return fmt.Errorf("both latitude (\"lat\") and longitude (\"lon\") must be provided")
+	}
+
 	latFloat, err := strconv.ParseFloat(lat, 64)
 	if err != nil || latFloat < -90 || latFloat > 90 {
 		return fmt.Errorf("invalid latitude: %s", lat)
